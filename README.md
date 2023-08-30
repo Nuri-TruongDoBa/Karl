@@ -1,2 +1,2 @@
 # BaseMvc
-PHP used to build MVC for every project
+This is the basic design pattern for any project using pure PHP
