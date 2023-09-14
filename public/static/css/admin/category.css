@@ -1,0 +1,49 @@
+.admin-pages .category-view-page .actions {
+    margin: 1rem 0;
+}
+
+.admin-pages .category-view-page .actions .btn-submit {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    background-color: var(--color-red);
+    color: var(--color-white);
+    padding: .7rem 1.3rem;
+    font-size: 1rem;
+}
+
+.admin-pages .category-view-page .actions .btn-submit:hover {
+    opacity: .7;
+}
+
+.admin-pages .category-view-page #page-left {
+    flex: 0 0 45%;
+    width: 100%;
+    height: 100%;
+}
+
+.admin-pages .category-view-page #page-right {
+    flex: 0 0 55%;
+    width: 100%;
+    height: 100%;
+}
+
+#category-treeview {
+    margin-left: 1rem;
+}
+
+#category-treeview .treeview-item .treeview-item__label {
+    font-family: 'Cairo', sans-serif;
+    font-size: .9rem;
+    text-transform: capitalize;
+    font-weight: 700;
+}   
+
+#category-treeview > .treeview-item::before {
+    left: -.65em;
+}
+
+#category-treeview .treeview .treeview-item .treeview-item__label::before {
+    left: -0.8em;
+    top: .2em;
+}

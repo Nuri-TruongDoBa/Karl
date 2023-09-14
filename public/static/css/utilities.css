@@ -1,0 +1,325 @@
+/* Modal style sheet */
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-dark-transparent);
+}
+
+.modal._show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal .modal-wrapper {
+  min-width: max-content;
+  width: 60%;
+  min-height: max-content;
+  height: 50%;
+  background-color: var(--color-white);
+  border-radius: 0.4rem;
+  padding: 2rem 4rem;
+}
+
+.modal .modal-wrapper .modal-header {
+  position: relative;
+  width: 100%;
+}
+
+.modal .modal-header .modal-title {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.modal .modal-header .modal-button__close::before,
+.modal .modal-header .modal-button__close::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: -2.5rem;
+  width: 15px;
+  height: 2px;
+  background-color: var(--color-dark);
+}
+
+.modal .modal-header .modal-button__close:hover::before,
+.modal .modal-header .modal-button__close:hover::after {
+  background-color: var(--color-red);
+}
+
+.modal .modal-header .modal-button__close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.modal .modal-header .modal-button__close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.modal .modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.modal .modal-footer .btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.4rem;
+  background-color: var(--color-gray);
+  font-weight: 500;
+  color: var(--color-white);
+  margin-left: 0.5rem;
+}
+
+.modal .modal-wrapper .modal-content {
+  margin: 1rem auto;
+  min-height: calc(100% - 7rem);
+}
+
+.modal .modal-footer .modal-button__close:hover {
+  background-color: var(--color-red);
+}
+
+.modal .modal-footer .modal-button__submit:hover {
+  background-color: var(--color-green);
+}
+
+/* Collapse components */
+.collapse {
+  display: none;
+}
+
+.accordion .accordion-item._active .collapse {
+  display: block;
+}
+
+.accordion .accordion-item {
+  width: 30%;
+  overflow: hidden;
+}
+
+.accordion .accordion-item .accordion-header {
+  border-bottom: 1px solid var(--color-gray);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.accordion .accordion-header .accordion-button::before {
+  position: relative;
+  content: "";
+  height: 11px;
+  width: 11px;
+  display: inline-block;
+  margin-right: 5px;
+  border: 1px solid var(--color-gray);
+  border-radius: 3px;
+}
+
+.accordion .accordion-item._active .accordion-header .accordion-button::before {
+  background-color: var(--color-red);
+}
+
+.accordion .accordion-item .accordion-collapse {
+  margin: 1rem;
+}
+
+/* Popover components style css */
+.popover {
+  position: absolute;
+  right: 3rem;
+  background-color: var(--color-white);
+  border-radius: 4px;
+  min-width: 18rem;
+  box-shadow: 0 0 5px 5px rgba(98, 93, 93, 0.5);
+  display: none;
+}
+
+.popover._show {
+  display: block;
+}
+
+.popover::before {
+  position: absolute;
+  content: "";
+  height: 10px;
+  width: 15px;
+  bottom: 100%;
+  right: 10px;
+  background-color: var(--color-white);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  box-shadow: 0 0 5px 5px rgba(98, 93, 93, 0.5);
+}
+
+/* Tree view style sheet */
+.treeview {
+  margin: 1rem;
+}
+
+.treeview .treeview-item {
+  position: relative;
+}
+
+.treeview .treeview-item__input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.treeview .treeview-item__input ~ .treeview {
+  display: none;
+}
+
+.treeview .treeview-item__input:checked ~ .treeview {
+  display: block;
+}
+
+.treeview .treeview-item {
+  line-height: 1.2;
+  position: relative;
+  padding: 0 0 1em 1em;
+}
+
+.treeview > .treeview-item:last-child {
+  padding-bottom: 0;
+}
+
+.treeview .treeview-item__label {
+  position: relative;
+  display: inline-block;
+  background-color: #fff;
+}
+
+.treeview label.treeview-item__label {
+  cursor: pointer;
+}
+
+.treeview-root.treeview > .treeview-item label.treeview-item__label {
+  padding-left: 1em;
+}
+
+.treeview .treeview .treeview-item label.treeview-item__label {
+  padding-left: 1.5em;
+}
+
+.treeview .treeview .treeview-item label.treeview-item__label {
+  left: -0.8em;
+}
+
+.treeview-root.treeview > .treeview-item label.treeview-item__label::before {
+  left: -1em;
+  top: .2em;
+}
+
+.treeview label.treeview-item__label:hover {
+  color: #666;
+}
+
+.treeview label.treeview-item__label::before {
+  position: relative;
+  background: #000;
+  color: #fff;
+  z-index: 1;
+  float: left;
+  margin: 0 1em 0 -2em;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  content: "+";
+  text-align: center;
+  line-height: 0.9em;
+  transform: translateY(2px);
+}
+
+.treeview .treeview-item__input:checked ~ label.treeview-item__label::before {
+  content: "–";
+}
+
+.treeview .treeview-item::before {
+  top: 1em;
+  bottom: 0;
+  left: -0.5em;
+  display: block;
+  width: 0;
+  border-left: 1px solid #777;
+  content: "";
+  height: 100%;
+}
+
+.treeview .treeview .treeview-item::before {
+  top: 1.2em;
+  left: -0.8em;
+}
+
+.treeview-root.treeview > .treeview-item .treeview-item__label::after {
+  position: absolute;
+  top: 0.8em;
+  left: -1em;
+  display: block;
+  height: 2.6em;
+  width: 1.5em;
+  border-top: 1px solid #777;
+  content: "";
+}
+
+.treeview-root.treeview
+  > .treeview-item
+  :checked
+  ~ .treeview-item__label::after {
+  border-right: 1px solid #777;
+  border-radius: 0 0.3em 0 0;
+}
+
+.treeview-root.treeview
+  > .treeview-item:last-child
+  .treeview-item__label::after {
+  border-radius: 0;
+  border-right: 0;
+  top: 0.7em;
+  height: 0;
+}
+
+.treeview-root.treeview .treeview .treeview-item .treeview-item__label::after {
+  left: -1em;
+  width: 2.3em;
+  top: 0.8em;
+}
+
+.treeview-root.treeview
+  .treeview
+  .treeview-item:last-child
+  .treeview-item__label::after {
+  border-right: 0;
+  border-radius: 0;
+}
+
+.treeview .treeview-item:last-child:before {
+  height: 1em;
+  bottom: auto;
+}
+
+.treeview > .treeview-item:last-child:before {
+  display: none;
+}
+
+.treeview-root.treeview
+  > .treeview-item:last-child
+  :checked
+  ~ .treeview-item__label::after {
+  border-right: 1px solid #777;
+  border-radius: 0 0.3em 0 0;
+  height: 2.6em;
+}
+
+.treeview .treeview-item.no-items :checked ~ .treeview-item__label::after {
+  border-right: 0 !important;
+  border-radius: 0 !important;
+  height: 0;
+}

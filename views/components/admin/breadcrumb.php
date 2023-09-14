@@ -1,0 +1,1 @@
+<h2 class="breadcrumb"><?= key_exists('breadcrumb', $data) && $data['breadcrumb'] ? $data['breadcrumb'] : 'Categories' ?></h2>

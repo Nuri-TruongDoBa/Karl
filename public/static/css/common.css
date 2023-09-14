@@ -1,0 +1,240 @@
+/* Flexbox css */
+.flex-between,
+.flex-start,
+.flex-between,
+.flex-center,
+.flex-end,
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.container {
+  align-items: flex-start;
+}
+
+/* Page message css */
+.page .page-messages {
+  margin-top: 1rem;
+}
+
+.page .page-messages .message {
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: var(--color-white);
+}
+
+.page .page-messages .message.error {
+  background-color: var(--color-red);
+}
+
+.page .page-messages .message.success {
+  background-color: var(--color-green);
+}
+
+.page .page-messages .message::before {
+  position: relative;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f071";
+  margin-right: 0.5rem;
+  color: var(--color-white);
+}
+
+.page .page-messages .message.success::before {
+  content: '\f058';
+}
+
+/* Form element style css */
+.page-form .switch-label {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.page-form .switch-label .switch-label__title {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 700;
+  width: 30%;
+}
+
+.page-form .form-group .form-group__label i,
+.page-form .switch-label .switch-label__title i {
+  color: red;
+}
+
+.page-form .switch-group {
+  position: relative;
+  width: 51px;
+  height: 25px;
+}
+
+.page-form .switch-group .switch-input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.page-form .switch-group .switch-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: var(--color-gray);
+}
+
+.page-form .switch-group .switch-slider:before {
+  position: absolute;
+  content: "";
+  height: 23px;
+  width: 23px;
+  left: 1px;
+  bottom: 1px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.page-form .switch-group .switch-input:checked + .switch-slider {
+  background-color: var(--color-info);
+}
+
+.page-form .switch-group .switch-input:focus + .switch-slider {
+  box-shadow: 0 0 1px var(--color-info);
+}
+
+.page-form .switch-group .switch-input:checked + .switch-slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.page-form .form-group {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.page-form .form-group.form-text,
+.page-form .form-group .form-group__enter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.page-form .form-group.hidden {
+  display: none;
+}
+
+.page-form .form-group .form-group__label,
+.page-form .form-group .form-group__input {
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+
+.page-form .form-group .form-group__label {
+  min-width: 30%;
+}
+
+.page-form .form-group .form-group__input {
+  border: 1px solid var(--color-gray);
+  min-height: 2rem;
+  font-weight: 400;
+  padding: 0 0.5rem;
+  font-size: 0.7rem;
+  cursor: text;
+}
+
+.page-form .form-group .form-group__input::placeholder {
+  color: var(--color-gray);
+}
+
+.page-form .form-group .form-group__input[type="file"] {
+  display: none;
+}
+
+.page-form .form-group .form-group__buttonAlternative {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--color-white);
+  background-color: var(--color-info);
+  font-weight: 0.9rem;
+}
+
+.page-form .form-group .form-group__buttonAlternative:hover {
+  background-color: var(--color-gray);
+}
+
+.page-form .form-group .form-group__preview {
+  margin-left: 30%;
+  position: relative;
+  margin-top: 1rem;
+  width: 8rem;
+  height: 8rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-form .form-group .form-group__previewMask {
+  position: relative;
+  display: block;
+  height: 8rem;
+  width: 8rem;
+  padding: 0.5rem;
+  padding-top: calc(8rem - 3rem);
+  border: 1px solid var(--color-gray);
+  white-space: normal;
+  text-align: center;
+  background: url("../../media/images/media-placeholder.png") no-repeat;
+  background-position: center 10px;
+  background-size: 4rem auto;
+}
+
+.page-form .form-group .form-group__previewRemove {
+  position: absolute;
+  font-size: 1rem;
+  bottom: 1.5rem;
+  left: 0.5rem;
+}
+
+.page-form .form-group .form-group__previewMask.hide,
+.page-form .form-group .form-group__previewRemove.hide {
+  display: none;
+}
+
+.page-form .form-group .form-group__previewRemove:hover ::before {
+  color: var(--color-gray);
+  z-index: 50;
+}
+
+.page-form .form-group .form-group__previewImage {
+  object-fit: contain;
+  object-position: center;
+}

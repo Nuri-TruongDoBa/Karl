@@ -24,13 +24,17 @@ class Autoloader
     private function fileLoader()
     {
         foreach (self::getFileLoad() as $file) {
-            require_once '../' . $file;
+            $file = __DIR__ . '/../' . $file;
+            if (file_exists($file)) {
+                require_once $file;
+            }
         }
     }
 
     private static function getFileLoad()
     {
         return [
+            'config/const.php',
             'routes/route.php'
         ];
     }

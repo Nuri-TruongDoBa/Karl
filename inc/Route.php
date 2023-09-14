@@ -59,9 +59,8 @@ class Route
     private static function map()
     {
         $numHandled = 0;
-        $requestUri = '/' . trim($_SERVER['PATH_INFO'] ?? '/', '/');
+        $requestUri = '/' . trim($_SERVER['REDIRECT_URL'] ?? '/', '/');
         $requestMethod = self::getRequestMethod();
-
         foreach (self::$routes as $route) {
             list($method, $path, $handler, $middlewares) = $route;
             if (strpos($method, $requestMethod) !== FALSE) {
@@ -109,7 +108,7 @@ class Route
 
     private static function notFoundError()
     {
-        throw new NotFoundException();
+        echo 'error';
     }
 
     private static function getParams($path, $uri)
